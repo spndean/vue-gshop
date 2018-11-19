@@ -6,9 +6,16 @@
 </template>
 
 <script>
-  import FootGuide from './components/FootGuide/FootGuide.vue'
+  import FootGuide from './components/FootGuide/FootGuide.vue';
+  import {reqAddress} from './api/'
 
   export default {
+//      reqAddress函数返回promise对象  想得到结果result  加await async
+     async mounted(){
+          const result = await reqAddress('116.36867','40.10038');
+          console.log(result)
+      },
+
     components: {
       FootGuide
     }
